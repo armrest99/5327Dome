@@ -87,12 +87,12 @@ pros::Controller master (pros::E_CONTROLLER_MASTER);
 		leftmotorback.move(master.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y));
 	}
 	else{
-		leftmotorfront.move(MOTOR_BRAKE_HOLD);
+		leftmotorfront.move(0);
 		//leftmotormiddle.move(MOTOR_BRAKE_HOLD);
-		leftmotorback.move(MOTOR_BRAKE_HOLD);
-		rightmotorfront.move(MOTOR_BRAKE_HOLD);
+		leftmotorback.move(0);
+		rightmotorfront.move(0);
 		//rightmotormiddle.move(MOTOR_BRAKE_HOLD);
-		rightmotorback.move(MOTOR_BRAKE_HOLD);
+		rightmotorback.move(0);
 	}
 
 //Arcade Control X Drive Base
@@ -109,10 +109,10 @@ pros::Controller master (pros::E_CONTROLLER_MASTER);
       rightmotorback.move(master.get_analog(ANALOG_RIGHT_X));
 		}
 		else{
-    	leftmotorfront.move(MOTOR_BRAKE_HOLD);
-    	rightmotorfront.move(MOTOR_BRAKE_HOLD);
-      leftmotorback.move(MOTOR_BRAKE_HOLD);
-      rightmotorback.move(MOTOR_BRAKE_HOLD);
+    	leftmotorfront.move(0);
+    	rightmotorfront.move(0);
+      leftmotorback.move(0);
+      rightmotorback.move(0);
 		}*/
 
       pros::delay(2);
