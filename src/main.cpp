@@ -1,10 +1,10 @@
 #include "main.h"
 //Motor Constructors
 pros::Motor rightmotorfront (3, pros::E_MOTOR_GEARSET_18, 0, pros::E_MOTOR_ENCODER_DEGREES);
-//pros::Motor rightmotormiddle (4, pros::E_MOTOR_GEARSET_18, 0, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor rightmotormiddle (4, pros::E_MOTOR_GEARSET_18, 0, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor rightmotorback (5, pros::E_MOTOR_GEARSET_18, 0, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor leftmotorfront (11, pros::E_MOTOR_GEARSET_18, 0, pros::E_MOTOR_ENCODER_DEGREES);
-//pros::Motor leftmotormiddle (12, pros::E_MOTOR_GEARSET_18, 0, pros::E_MOTOR_ENCODER_DEGREES);
+pros::Motor leftmotormiddle (12, pros::E_MOTOR_GEARSET_18, 0, pros::E_MOTOR_ENCODER_DEGREES);
 pros::Motor leftmotorback (13, pros::E_MOTOR_GEARSET_18, 0, pros::E_MOTOR_ENCODER_DEGREES);
 
 /**
@@ -78,7 +78,7 @@ pros::Controller master (pros::E_CONTROLLER_MASTER);
 //Tank Control Tank Drive Base
 	if(master.get_analog(ANALOG_RIGHT_Y)){
 		rightmotorfront.move(master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
-		//rightmotormiddle.move(master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
+		rightmotormiddle.move(master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
 		rightmotorback.move(master.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_Y));
 	}
 	if(master.get_analog(ANALOG_LEFT_Y)){
@@ -88,10 +88,10 @@ pros::Controller master (pros::E_CONTROLLER_MASTER);
 	}
 	else{
 		leftmotorfront.move(0);
-		//leftmotormiddle.move(MOTOR_BRAKE_HOLD);
+		leftmotormiddle.move(MOTOR_BRAKE_HOLD);
 		leftmotorback.move(0);
 		rightmotorfront.move(0);
-		//rightmotormiddle.move(MOTOR_BRAKE_HOLD);
+		rightmotormiddle.move(MOTOR_BRAKE_HOLD);
 		rightmotorback.move(0);
 	}
 
